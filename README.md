@@ -60,7 +60,7 @@ When using OpenFlow, tools such as TShark can be vital for debugging. However, t
 
 |     Name      |        Command         |                                 Description                                  |                                     Guide                                      |
 | :-----------: | :--------------------: | :--------------------------------------------------------------------------: | :----------------------------------------------------------------------------: |
-| **OvS OFCTL** |      `ovs-ofctl`       | Manually control OvS switches using various control types including OpenFlow |                        [here](./ovs-ofctl/OVSOFCTL.md)                         |
+| **OvS OFCTL** |      `ovs-ofctl`       | Manually control OvS switches using various control types including OpenFlow |                         [here](./ovsofctl/OVSOFCTL.md)                         |
 |   **PTCP**    | `controller ptcp:6633` |                       Run a simple OpenFlow controller                       | Included in the [Mininet Tutorial](https://github.com/scc365/tutorial-mininet) |
 
 ### P4 Tools
