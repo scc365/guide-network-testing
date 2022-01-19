@@ -58,12 +58,14 @@ Using `iperf` in Mininet can be easily done though the command given in the Mini
   mininet> iperf h1 h2
   ```
 
-This however does not have the configurability of using the `iperf3` command recommended:
+This however does not have the configurability of using the `iperf3` command recommended. Unfortunately, without using `ssh` or `xterm`, there isn't a straight forward way to be running commands on 2 Mininet hosts at the same time (exactly what is needed to run both an `iperf` server and client)! To do this, you have to be able to have the server application run in the background like so:
 
 - To repeat the `h1` to `h2` `iperf` test done above, you can use the node name prefixing to run the `iperf3` command:
   ```
   mininet> h1 iperf3 -s -p 5201 &
   ```
+  > Adding the `&` to the end of the command lets the shell continue immediately, effectively putting the command in the background. This is not just a feature in the Mininet prompt, but is in most shell environments you'll use (thanks to `bash`).
+
   This starts an `iperf` server in the background on `h1`. You can check this by checking the jobs on `h1` like so:
   ```
   mininet> h1 jobs
