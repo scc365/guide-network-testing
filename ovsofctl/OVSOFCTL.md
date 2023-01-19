@@ -19,7 +19,7 @@ ovs-vsctl list-br
 OvS-OFCTL can be used with the command "`ovs-ofctl`" followed by any support command.
 
   - **`dump-flows <switch name>`**: Dumps the flow table for a given supported switch
-  - **`dump-ports-desc <switch name`**: Dumps information about the ports on a given supported switch
+  - **`dump-ports-desc <switch name>`**: Dumps information about the ports on a given supported switch
 
 > 📖 There is more `ovs-ofctl` can do, see the [`ovs-ofctl` man page](https://manpages.ubuntu.com/manpages/focal/en/man8/ovs-ofctl.8.html) for more!
 
