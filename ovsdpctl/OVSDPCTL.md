@@ -8,7 +8,7 @@ OvS-DPCTL can be used with the command "`ovs-dpctl`" followed by any support com
 
   - **`dump-flows`**: Dumps the flow table for all supported datapaths
   - **`dump-flows <datapath name>`**: Dumps the flow table for a given supported datapath
-  - **`dump-ports-desc <datapath name`**: Dumps information about the ports on a given supported datapath
+  - **`dump-ports-desc <datapath name>`**: Dumps information about the ports on a given supported datapath
 
 > 📖 There is more `ovs-dpctl` can do, see the [`ovs-dpctl` man page](https://manpages.ubuntu.com/manpages/focal/en/man8/ovs-dpctl.8.html) for more!
 
