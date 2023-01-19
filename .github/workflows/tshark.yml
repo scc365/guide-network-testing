@@ -4,37 +4,53 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
+    paths:
+      - "tshark/Dockerfile"
   workflow_dispatch:
 
 jobs:
   build-push:
-    name: Build & Push
+    name: Docker Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Login to GHCR
-        uses: docker/login-action@v1
+        uses: actions/checkout@v3
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and Push Image
-        uses: docker/build-push-action@v2
+      - name: Container Metadata
+        id: metadata
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ghcr.io/${{ github.repository_owner }}/tshark
+          flavor: |
+            latest=false
+            prefix=
+            suffix=
+          tags: |
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+      - name: Build and Push Container
+        uses: docker/build-push-action@v3
         with:
           context: .
-          file: "./tshark/Dockerfile"
-          platforms: linux/amd64,linux/arm64/v8
+          file: tshark/Dockerfile
           push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/tshark:latest
+          platforms: linux/amd64,linux/386,linux/arm64,linux/arm/v6,linux/arm/v7
+          tags: ${{ steps.metadata.outputs.tags }}
+          labels: ${{ steps.metadata.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          labels: |
-            org.opencontainers.image.title=tshark
-            org.opencontainers.image.url=${{ github.event.repository.html_url }}
-            org.opencontainers.image.source=${{ github.event.repository.html_url }}
