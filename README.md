@@ -18,7 +18,7 @@ A VM named "SCC 365" is available on the university hosted MyLab service. This i
 
 It is this option that will be used by TAs when your work is being marked, so be sure to test any assessed work on this platform prior to submission.
 
-You can access MyLab [`here`](https://mylab.lancaster.ac.uk/).
+You can access MyLab [here](https://mylab.lancaster.ac.uk/). Not a Lancaster University Student or want to build your own VM image? Find more info [here](https://github.com/scc365/virtual-machine).
 
 ### **Docker**
 
@@ -28,7 +28,7 @@ If you would prefer to complete the practical work without a VM, this is partial
 
 Although the use of docker is not required, there will be some related help in the tutorials and coursework specs.
 
-You can find the base images on the GitHub page here .
+You can find the base images on the GitHub page [here](https://github.com/scc365) .
 
 ## Network Metrics
 
