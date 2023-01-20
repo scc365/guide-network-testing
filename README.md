@@ -9,7 +9,26 @@ Some testing is covered in the [`Mininet Tutorial`](https://github.com/scc365/tu
 > 📖 This can be used a guide to refer back to when completing other SCC365 tasks
 
 ## Getting Started
-- Get set-up on the provided VM: [information here](https://github.com/scc365/virtual-machine)
+
+### **MyLab VM**
+
+> required ‼️
+
+A VM named "SCC 365" is available on the university hosted MyLab service. This is the best way of running the provided VM and works from within your browser or the VMWare Horizon desktop client.
+
+It is this option that will be used by TAs when your work is being marked, so be sure to test any assessed work on this platform prior to submission.
+
+You can access MyLab [`here`](https://mylab.lancaster.ac.uk/).
+
+### **Docker**
+
+> optional 🐳
+
+If you would prefer to complete the practical work without a VM, this is partially possible. Provided are also docker base images for the core software used by the module. These are usable on MacOS and Linux.
+
+Although the use of docker is not required, there will be some related help in the tutorials and coursework specs.
+
+You can find the base images on the GitHub page here .
 
 ## Network Metrics
 
