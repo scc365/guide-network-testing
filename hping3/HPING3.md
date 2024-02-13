@@ -8,7 +8,7 @@ HPing3 can be used with the command "`hping3`" followed by any flags.
   - **`-i`**: The time to wait between each request (in seconds, or if the number is prefixed with `u`, microseconds)
     - **`--fast`**: Same as `-i u10000`
     - **`--faster`**: Same as `-i u1`
-    - **`--fastest`**: Just sends packets as fast as possible
+    - **`--flood`**: Just sends packets as fast as possible
   - **`-1`**: Use ICMP rather than TCP
   - **`-2`**: Use UDP rather than TCP
 
