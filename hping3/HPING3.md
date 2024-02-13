@@ -11,6 +11,11 @@ HPing3 can be used with the command "`hping3`" followed by any flags.
     - **`--flood`**: Just sends packets as fast as possible
   - **`-1`**: Use ICMP rather than TCP (TCP is always hping3's default)
   - **`-2`**: Use UDP rather than TCP
+  - **`--ttl`**: Set a custom TTL value on the generated packets.
+  - **`--traceroute`**: Using this will force the each generated packet to have a TTL 1 higher than the last (much like is done in the traceroute command).
+  - **`-s`**: The source port to use in the generated packets.
+  - **`--keep`**: By default, the source port is incremented with each packet sent. This flag fixes the port value.
+  - **`-p`**: The destinsation port to use in the generated packets.
 
 > 📖 There is **lots** more `hping3` can do, see the [`hping3` man page](https://manpages.ubuntu.com/manpages/focal/en/man8/hping3.8.html) for more!
 
