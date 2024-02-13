@@ -9,7 +9,7 @@ HPing3 can be used with the command "`hping3`" followed by any flags.
     - **`--fast`**: Same as `-i u10000`
     - **`--faster`**: Same as `-i u1`
     - **`--flood`**: Just sends packets as fast as possible
-  - **`-1`**: Use ICMP rather than TCP
+  - **`-1`**: Use ICMP rather than TCP (TCP is always hping3's default)
   - **`-2`**: Use UDP rather than TCP
 
 > 📖 There is **lots** more `hping3` can do, see the [`hping3` man page](https://manpages.ubuntu.com/manpages/focal/en/man8/hping3.8.html) for more!
@@ -36,7 +36,7 @@ If a firewall were to be situated on the path between 2 hosts, for example `h1` 
   ```
 - The firewall is intending to block stop TCP SYN flood attacks by blocking a node that sends too many TCP syn packets in a small time window. To test if this is working with `hping3`, the following could be executed:
   ```
-  hping3 --syn --fastest
+  hping3 --syn --flood
   ```
 
 > 💡 **Tip**: 
